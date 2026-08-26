@@ -1,2 +1,21 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+package com.example.service;
+
+import com.example.model.User;
+import com.example.repository.UserRepository;
+import java.util.List;
+
+public class UserService {
+    private final UserRepository repo = new UserRepository();
+
+    public void addUser(User user) {
+        repo.save(user);
+    }
+
+    public List<User> getUsers() {
+        return repo.findAll();
+    }
+}
+
+
